@@ -1,6 +1,12 @@
 public class LeetCode_0007 {
     class Solution {
         public int bitwiseComplement(int n) {
+
+            /*Problem:- Complement Of Base 10 Integer
+
+            Link:-https://leetcode.com/problems/complement-of-base-10-integer/description/
+             * 
+             */
             // int m=n;
             // int mask=0;
     
@@ -15,6 +21,8 @@ public class LeetCode_0007 {
             // }
             // int ans=(~n)&mask;
             // return ans;
+
+            //Solution:-
     
             String S=Integer.toBinaryString(n);
             String t="";
