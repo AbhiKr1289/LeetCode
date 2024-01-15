@@ -41,15 +41,38 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 Solution:-
 */
-
+//Brute Force Approach
+// class Solution {
+//     public int[] twoSum(int[] nums, int target) {
+//         for(int i=0;i<nums.length-1;i++){
+//             for(int j=i+1;j<nums.length;j++){
+//                 if(nums[i]+nums[j]==target)
+//                     return new int[]{i,j};
+//             }
+//         }
+//         return null;
+//     }
+// }
+//Better Approach
+import java.util.*;
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        for(int i=0;i<nums.length-1;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i]+nums[j]==target)
-                    return new int[]{i,j};
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int i=0; i<nums.length; i++){
+
+            int value = target-nums[i];
+
+            if(map.containsKey(value)){
+                //map.get(value) will give index of 2 i.e zero.
+                return new int[] {map.get(value), i};
+                
             }
+            map.put(nums[i], i);
+
         }
         return null;
+        
     }
 }
